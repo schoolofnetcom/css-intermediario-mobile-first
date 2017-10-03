@@ -1,0 +1,255 @@
+:root {
+    --cor1: #27ae60;
+    --cor2: #2ecc71;
+    --cor3: #ffffff;
+    --cor4: #000000;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    color: var(--cor4);
+}
+
+h1, h3 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+h1, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+#image {
+    margin-bottom: 15px;
+}
+
+main h1, main h3, main p {
+    margin-bottom: 15px;
+}
+
+header {
+    background: var(--cor2);
+    text-align: center;
+    height: 100px;
+    line-height: 100px;
+}
+
+header a {
+    color: var(--cor3);
+}
+
+header .menu-icon {
+    position: absolute;
+    top: 35px;
+    left: 30px;
+    width: 35px;
+    height: 28px;
+    display: block;
+    background-color: var(--cor1);
+}
+
+header .menu-icon:before {
+   content: '';
+   display: block;
+   margin: 5px auto;
+   width: 80%;
+   height: 4px;
+   background: var(--cor3);
+   box-shadow: 0 7px 0 0 var(--cor3),  0 15px 0 0 var(--cor3);
+}
+
+menu, menu ul, menu li {
+    display: block;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100%;
+    background: var(--cor1);
+    z-index: 1;
+    padding: 15px 0;
+    border-right: 7px solid var(--cor1);
+    transform: translateX(-300px);
+}
+
+.menu-active menu {
+    transform: translateX(0);
+}
+
+.menu-active header, .menu-active main, .menu-active footer {
+    transform: translateX(300px);
+}
+
+header, menu, main, footer {
+    transition: transform .3s linear;
+}
+
+menu li a {
+    display: block;
+    color: var(--cor3);
+    padding: 15px;
+}
+
+menu li a:hover {
+    background: var(--cor2);
+}
+
+img.responsive {
+    width: 100%;
+    height: auto;
+}
+
+.video-responsive {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    padding-top: 25px;
+    height: 0;
+}
+
+.video-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    width: 100%;
+    padding-left : 15px;
+    padding-right : 15px;
+}
+
+.row {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.row:before, .row:after {
+    content: '';
+    display: table;
+}
+
+.row:after {
+    clear: both;
+}
+
+.row .col {
+    padding-left : 15px;
+    padding-right : 15px;
+}
+
+.row-flex {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.col-flex {
+    padding-left : 15px;
+    padding-right : 15px;
+}
+
+.col-flex.col-1 {
+    flex: 1;
+}
+
+.col-flex.col-2 {
+    flex: 2;
+}
+
+.col-flex.col-3 {
+    flex: 3;
+}
+
+.col-flex.order-1 {
+    order: 1;
+}
+
+.col-flex.order-2 {
+    order: 2;
+}
+
+.col-flex.order-3 {
+    order: 3;
+}
+
+.row-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) 2fr;
+}
+
+/*
+ celulares ladscape (deitado),
+ daqui pra cima, ou seja,s em media queries seria
+ um celular em portrait (em pé)
+*/
+@media (min-width: 576px) {
+}
+
+/*
+ tables e maiores
+*/
+@media (min-width: 768px) {
+}
+
+/*
+ monitores menores e maiores
+*/
+@media (min-width: 992px) {
+    header .menu-icon {
+        display: none;
+    }
+
+    menu {
+        position: relative;
+        transform: translateX(0);
+        width: 100%;
+        text-align: center;
+        padding: 0;
+    }
+
+    menu li {
+        display: inline-block;
+    }
+
+    .row .col {
+        width: 33%;
+        float: left;
+    }
+}
+
+/*
+ monitores maiores
+*/
+@media (min-width: 1200px) {
+}
+
+/*
+ para impressão
+*/
+@media print {
+}
